@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>使用动态规划解决童年难题 | 寒食帖</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/normalize.css/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.css"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">使用动态规划解决童年难题</h1><a id="logo" href="/.">寒食帖</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">使用动态规划解决童年难题</h1><div class="post-meta">2018-07-15</div><div class="post-content"><p>记得小时候，央视有一档综艺节目叫做《超市大赢家》，大致内容是：规定在一段时间内以及只有一辆购物车的情况下，每队可以在超市内任意选购（每种商品数量有所限制），在游戏时间结束时，购物车中商品总价格最高的一队获胜，并且可以免费带走购物车内所有商品。</p>
+<p>相信很多人在童年时都看过这档节目，当时对我产生了极大的冲击，简直就是我的人生梦想（之一）。但问题也随之而来了，对于那时生活和购物经验都不足的我来说，到底哪些商品既价格高，所占空间又小呢？而且由于对相同商品的数量有着限制，那么势必需要合理分配购物车的空间，才能使价值最大化，但这又该如何操作和计算呢?</p>
+<a id="more"></a>
+
+<p>童年的我陷入了矛盾，后来我并没有机会去参加这个节目，不过问题却一直留了下来。</p>
+<p>我相信，直到现在，对于这个问题或者类似的问题，依然会有很多人无从下手。我也是在接触了算法之后，才回忆起这个童年难题，并用动态规划去解决它。</p>
+<p>我觉得，这也是一种，人们即使不以计算机为职业，不过仍有需要学一些编程知识的意义之一。</p>
+<p>那么我们接下来就以编程的思维去解决这个有意思的问题。</p>
+<p>假设我们现在有多种商品，数量都是为一。有人可能会觉得，计算机运行速度那么快，那么我们就把所有可能的情况都列举出来，再计算总价进行比较，不就得出答案了吗？</p>
+<p>这样真的可行吗？我们来列出一张表格。</p>
+<table>
+<thead>
+<tr>
+<th>元素数量</th>
+<th>集合数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3</td>
+<td>8</td>
+</tr>
+<tr>
+<td>4</td>
+<td>16</td>
+</tr>
+<tr>
+<td>5</td>
+<td>32</td>
+</tr>
+<tr>
+<td>32</td>
+<td>40亿</td>
+</tr>
+<tr>
+<td>40</td>
+<td>10240亿</td>
+</tr>
+</tbody></table>
+<p>假设超市只有40种商品，就已经出现了10240亿个集合数量。如果一个小超市有上百种商品，用现在的个人电脑，应该从你的童年到老年也计算不出结果。</p>
+<p>显然这是不合理的，我们可以使用动态规划，动态规划的思想是：</p>
+<blockquote>
+<p> 将待求解的问题分解成若干个相互联系的子问题，先求解子问题，然后再将子问题的解作为上层问题的条件，直至求出原问题的解。</p>
+</blockquote>
+<p>童年的小刘不知不觉长大了，在他18岁生日之际，他觉得作为成年人，当然需要一些电子产品，爸爸给了他一个空间为4的包，承诺可以为其中的东西付款。小刘调查了商品一下价格，开始筹划怎样才能最大化地坑爹。</p>
+<table>
+<thead>
+<tr>
+<th>商品名称</th>
+<th>价格</th>
+<th>空间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>手机</td>
+<td>3000</td>
+<td>1</td>
+</tr>
+<tr>
+<td>平板</td>
+<td>4000</td>
+<td>3</td>
+</tr>
+<tr>
+<td>电脑</td>
+<td>8000</td>
+<td>4</td>
+</tr>
+</tbody></table>
+<p>动态规划既然是要将大问题分为若干子问题，那么我们是否可以这么考虑：</p>
+<ol>
+<li>假如商场只卖手机。<ol>
+<li>包的空间为1</li>
+<li>包的空间为2</li>
+<li>包的空间为3</li>
+<li>包的空间为4</li>
+</ol>
+</li>
+<li>假如商场只卖手机和平板（1的结果可以为2所用）<ol>
+<li>包的空间为1</li>
+<li>包的空间为2</li>
+<li>包的空间为3</li>
+<li>包的空间为4</li>
+</ol>
+</li>
+<li>…</li>
+</ol>
+<p>这是我们的思路过程。思路过程种，不难发现，这似乎是一张二维的表：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/5889935-04f3709b01d54ab6?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>那我们就开始尝试计算吧。</p>
+<p>先只看第一行，只有手机可以挑选，在包的空间递增的过程中，会出现以下情况：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/5889935-081381a6ead02766?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>现在继续看下一行，此时有手机和平板可供选择，包的空间在递增，此时已经存在第一行的数据可以使用，不必重复计算：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/5889935-facaf4a8678cdbef?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>我们不难归纳出算法：</p>
+<ol>
+<li>获取上一行同列商品的价格</li>
+<li>获取当前行商品的价格+剩余空间可放置价格</li>
+<li>对以上两者进行比较，取其大者</li>
+</ol>
+<p>这样，我们可以得到，在能够选择的商品种类下，随着包的空间递增，能够获取的最大的价值。那么我们的终极目标，就是右下角的那个格子的值。</p>
+<p>现在我们尝试用代码来实现一下，我这里选择的是Python，当然算法的实现和语言本身没有任何关系，哪种最顺手，最便捷即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dp_func</span><span class="params">(bill,zone)</span>:</span></span><br><span class="line">    <span class="comment">#首先生成二维数组</span></span><br><span class="line">    bill_list=list(bill.keys())</span><br><span class="line">    array_row=len(bill)</span><br><span class="line">    array_column=zone+<span class="number">1</span></span><br><span class="line">    array=[[<span class="number">0</span>]*array_column <span class="keyword">for</span> i <span class="keyword">in</span> range(array_row)]</span><br><span class="line">    <span class="comment">#开始判断</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,array_row):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>,array_column):</span><br><span class="line">            previous=array[i<span class="number">-1</span>][j]<span class="comment">#上一行同列商品的价格</span></span><br><span class="line">            current_goods_price=bill[bill_list[i]][<span class="number">0</span>]<span class="comment">#当前行商品的价格</span></span><br><span class="line">            current_goods_zone=bill[bill_list[i]][<span class="number">1</span>]<span class="comment">#当前行商品的空间</span></span><br><span class="line">            <span class="keyword">if</span> j-current_goods_zone&gt;=<span class="number">0</span>:</span><br><span class="line">                left_price = array[i - <span class="number">1</span>][j - current_goods_zone]  <span class="comment"># 剩余空间可放置的商品价格</span></span><br><span class="line">                <span class="keyword">if</span> previous &gt; current_goods_price + left_price:</span><br><span class="line">                    array[i][j] = previous</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    array[i][j] = current_goods_price + left_price</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                array[i][j] = previous</span><br><span class="line">    <span class="keyword">return</span> array</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    test_bill=&#123;<span class="string">"手机"</span>:[<span class="number">3000</span>,<span class="number">1</span>],<span class="string">"平板"</span>:[<span class="number">4000</span>,<span class="number">3</span>],<span class="string">"电脑"</span>:[<span class="number">8000</span>,<span class="number">4</span>]&#125;</span><br><span class="line">    cart_zone=<span class="number">4</span></span><br><span class="line">    print(dp_func(test_bill,cart_zone))</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/5889935-9073bede37d92a36?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>计算出最后的结果是8000元，由于商品数量比较少，这时候我们可以将这个数据与枚举方法所得的结果进行比较检验，发现是与预期结果一样的，</p>
+<p>为了更一般化，可以更改几组测试用例进行多次测试。</p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>需要注意的是，动态规划很强大，但是局限在与：每个子问题都必须是离散的，即相互之间不存在依赖。</p>
+<p>童年，曾经有一道复杂的难题摆在我面前，我不会解，等我现在能够解决了，却发现依旧没有能力为我的购物车支付，人世间最痛苦的事莫过于此。</p>
+<p>如果上天能够给我一个再来一次的机会，我会对小时候的我说：早点学计算机。</p>
+</div><div class="tags"><a href="/tags/算法/"><i class="fa fa-tag"></i>算法</a></div><div class="post-nav"><a class="pre" href="/2018/07/16/这个时代，还需要写网志吗？/">这个时代，还需要写网志吗？</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"><input type="hidden" name="sitesearch" value="http://streambuf.com"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/随笔/" style="font-size: 15px;">随笔</a> <a href="/tags/实习/" style="font-size: 15px;">实习</a> <a href="/tags/公众号/" style="font-size: 15px;">公众号</a> <a href="/tags/HBase/" style="font-size: 15px;">HBase</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/开发/" style="font-size: 15px;">开发</a> <a href="/tags/并发/" style="font-size: 15px;">并发</a> <a href="/tags/https/" style="font-size: 15px;">https</a> <a href="/tags/随感/" style="font-size: 15px;">随感</a> <a href="/tags/CSRF/" style="font-size: 15px;">CSRF</a> <a href="/tags/爬虫/" style="font-size: 15px;">爬虫</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/04/14/在爱奇艺实习八个月，我所学会的/">在爱奇艺实习八个月，我所学会的</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/30/我抓取了全校学生的毕设信息/">我抓取了全校学生的毕设信息</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/15/一名实习生的自我修养/">一名实习生的自我修养</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/08/云上秘史：Chapter1. HBase/">【鸽子】云上秘史：Chapter1. HBase</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/26/骗子或许比你更了解CSRF/">骗子或许比你更了解CSRF</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/24/我的编程之路/">我的编程之路</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/11/谈恋爱也要懂https/">谈恋爱也要懂https</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/22/如何写一个微信小游戏的后台/">如何写一个微信小游戏的后台</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/食堂中的生产者-消费者模型/">食堂中的生产者-消费者模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/16/这个时代，还需要写网志吗？/">这个时代，还需要写网志吗？</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2020 <a href="/." rel="nofollow">寒食帖.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js" successtext="复制成功!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

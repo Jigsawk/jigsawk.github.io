@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>谈恋爱也要懂https | 寒食帖</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/normalize.css/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.css"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">谈恋爱也要懂https</h1><a id="logo" href="/.">寒食帖</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">谈恋爱也要懂https</h1><div class="post-meta">2018-11-11</div><div class="post-content"><p><img src="https://user-gold-cdn.xitu.io/2018/11/11/1670090aa45ee0ce?w=707&h=749&f=png&s=788420" alt><br>高中往往是青少年最渴望恋爱的时期，即使在高考的重压之下，情窦初开的同学们，用着自己的方式传达着自己对异性（或同性）的好感。由于手机等通讯工具在学校中是被列为第一大禁品，那时的小情侣们往往通过传纸条、交换日记的方式在罅隙间私语。相较于冰冷的屏幕，这些存在于纸上残留着温度的油墨文字，反而更让人感受身心的熨帖。</p>
+<a id="more"></a>
+
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/11/11/1670090e717446f2?w=1024&h=526&f=png&s=367421" alt></p>
+<p>在这种原始的通信方式中，所有的信息都是明文公开的，这非常的不安全，对于热恋中的情侣来说，窃窃私语，是属于两人独家的记忆，而这是万万不可让第三者监听或偷窥了去的。</p>
+<p>在最初，字节高中里情侣传纸条使用的是一种名为http1.0的协议，这还是1996年的学长们制定的一种规范。</p>
+<p>这套规则虽然满足了校园中情侣们日常的纸条传递需求，但是有着非常明显的缺点。因为http是无状态的，传递每张纸条都要重新建立起tcp连接，这十分消耗时间，也考验着同学们的耐心，一个课间十分钟，往往还没传几张纸条就上课了，非常低效。</p>
+<p>半年后，在1997年，学长们终于忍受不了这种折磨了，于是对http1.0进行完善。</p>
+<p>首先http1.1设计了一种长连接（persistent connection），在一次通信中，可以保持tcp连接不断开，这样就为多次传递纸条提供了一个稳定的通道。此外，在这个tcp通道里，学长可以向学姐发出多张纸条，而不用像以前那样只能发一张收一张了。更加激动人心的是，以前只能在纸条上写文字，现在可以附上照片、视频等内容，这简直是情侣们的一大福音。</p>
+<p>就这样过去了十多年，同学们一直将就着使用这种通信方式。而到了2015年，字节高中里一位学长决定要创新与推动协议的发展，为了让同学们能够更愉快和高效地传纸条，他发布了http2。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/11/11/16700913c14a5a48" alt></p>
+<p>在这个新版本中，他实现了“多工”的方式，即双方可以同时实时地向对方发送纸条，不需要像以前那样一一对应了。比如学姐现在收到了两张纸条，一张是“你中午吃了什么？”，第二张是“周末准备去哪玩？”她想详细地规划一下周末去哪玩（耗时任务），但又不想让对方久等，于是她现在可以先简短回复第二张纸条——“周末我想去电影院，然后和你一起刷公众号「字节流」”。然后完全回复第一张纸条——“中午吃的食堂，难吃死了。”接下来她可以慢慢构思周末想看哪部电影，看完电影再去哪个书店，然后再发送对第二张纸条的完整回复。同时，http2将所有的信息格式都定义为二进制，为了将来能直接发送更高级的应用而方便解码。</p>
+<p>字节中学原本是所正德厚学的高中，但是近年来学校里的不良少年竟渐渐多了起来。他们有时偷窃纸条，将其篡改再发送，引起情侣间的矛盾；有时监听情侣间的对话，然后将其报告给教导主任或匿名张贴在校门口，还有的，利用纸条上有价值的信息大发横财，赚的盆满钵满。一时间，校园内风声鹤唳，草木皆兵。同学们都不再敢使用http来传纸条了。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/11/11/16700918052581ff?w=450&h=270&f=png&s=48874" alt></p>
+<p>由于http是明文传输，这确实很容易让不良少年（中间人）截获，那么，怎么才能有效地对信息进行加密呢？</p>
+<p>一般来说，加密有两种方式，对称加密与非对称加密。首先简单介绍下这两种加密方式：</p>
+<ol>
+<li>对称加密： 也称为单密钥加密，即加密解密是使用同一把密钥。速度较快，使用的CPU资源少。</li>
+<li>非对称加密： 使用一对密钥：公钥和私钥。私钥与公钥是一对多的关系，公钥用于签名，私钥用于验证。私钥需要私自保管在本地，不能泄露，公钥可以随意在网上传输发放。</li>
+</ol>
+<p>小黄和小棕是校园中一对令人艳羡的情侣，现在他们准备亲身开创并尝试一种新的传纸条方式，以此来造福大家，也为了打击学校里的不良少年。</p>
+<p>首先，他们是这么设想的：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/11/10/166fcd1dacc3c573?w=1142&h=380&f=png&s=108259" alt></p>
+<p>看上去是可行的，但其实too young，不良少年只要截获KEY，发送伪造的KEY，那么之后的所有消息都将被监听。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/11/10/166fcdc1db33abd8?w=1555&h=420&f=png&s=161004" alt></p>
+<p>问题的核心在于，直接传输密钥是不安全的，需要对密钥进行加密。我们的目的是：即使中间人截获了密钥，也无法对密钥解密。</p>
+<p>那么，如何对密钥进行加密？</p>
+<p>如果使用对称加密来加密密钥，那么密钥的密钥在传输过程中仍然是不安全的，需要再对密钥的密钥加密。这将无限叠加，最终仍是不安全的，而且显然不合理。</p>
+<p>如果使用非对称加密，首先服务器生成一对公钥和私钥，将公钥发送出去；对方收到公钥后，本地使用对称加密生成一个密钥KEY，然后使用公钥加密这个密钥KEY，发送；服务器收到公钥加密的数据后，使用私钥解密，得到KEY。这时，双方可以使用KEY来加密数据，开始安全地交流。<br>（即使中间人截获了公钥加密的数据，但是由于没有私钥（私钥只有签发公钥的服务器保管，不会用于传输）所以无法解密出KEY。）</p>
+<p>设想图如下：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/11/10/166fd03237dc34d6?w=1246&h=596&f=png&s=179777" alt></p>
+<p>看上去是可行的，但其实还是too simple。假如小棕（服务器）在传输公钥给小黄（客户端）时，公钥被截获，小黑（中间人）自己生成一对公钥私钥，并将伪造的公钥传到小黄，这样一来，又被完全监听了。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/11/10/166fd0bacb4bd526?w=1415&h=489&f=png&s=188591" alt></p>
+<p>此时，产生了这种情况：客户端使用的是KEY1，服务器使用的是中间人伪造的KEY2，而中间人拥有KEY1，KEY2。所以中间人可以无限篡改数据。</p>
+<p>小黄和小棕又陷入了沉思，虽然新的方案解决了密钥被截获的问题，但是产生了新的难点，现在的问题域缩小为：如何加密并安全传输公钥？</p>
+<p>如果只是给公钥再对称加密或非对称加密的话，必定还是会衍生出鸡生蛋，蛋生鸡的问题。</p>
+<p>这该怎么办呢？此时，需要一个权威机构来主持大局。于是同学们决定推选德高望重的学生会主席小季(CA)来担此重任。</p>
+<p>小季是这样来操作的：首先，每个同学在入学的时候，都会收到由学生会颁发的公钥A，而这个公钥A是绝对可信任的。以后，哪个同学谈恋爱了，需要串小纸条了，就到学生会小季处申请证书，证书将用于对你的公钥B进行加密，然后你将你的公钥B加密后传输给你的对象，因为他/她在开学之初已经收到了CA的颁发的公钥A，只要用这个公钥A来解密数据，若能解开，便能取出你的公钥B。</p>
+<p>流程如下：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/11/10/166fd47150291e69?w=1056&h=589&f=png&s=198152" alt></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/11/10/166fd4ce48267c07?w=1315&h=385&f=png&s=176595" alt></p>
+<p>此时还有一个问题，因为不良少年也是学校里的学生，图一中可以看到，小季给不良少年也颁发了CA公钥，不良少年也是可以去向小季申请证书的。若不良少年截获服务器发送的证书，改成自己的，那岂不是又出现了不安全的问题？如下图：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/11/10/166fd62766165eed?w=1243&h=640&f=png&s=257523" alt></p>
+<p>可以发现有可能出现两个问题：</p>
+<ol>
+<li>证书被中间人截获，使用CA公钥篡改</li>
+<li>中间人将自己的证书伪造成源服务器发送的</li>
+</ol>
+<p>但这两个问题其实不会出现，小季早就考虑过这个问题，在证书的设计之初就解决了。其中引入了“数字签名”的概念。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/11/10/166fd6fed905d2c8?w=1339&h=494&f=png&s=84580" alt><br>数字签名可以解决可能出现的问题1。对于可能出现的问题2，由于证书B也是CA机构签发，所以数字签名可以通过验证，但是证书中包含了host信息，假如客户端正在访问的host和证书中的host不一样，浏览器会发出警告。就像这样：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/11/10/166fd7343068d49e?w=550&h=312&f=png&s=31019" alt></p>
+<p>到此为止，我们已经完全解决了中间人的问题，不良少年再也无法利用信息传输中的空子了。</p>
+<p>而https（http over Secure Socket Layer）即在SSL之上的http，正是使用了这种方式来保证传输的安全。</p>
+<p>小黑不甘心，想要找到新的解决方法，小季告诉他，编程世界中或许有你想要的答案，可以关注一下「字节流」这个公众号，里面的同学个个都是人才，说话又好听。</p>
+<p>于是小黑和他的中间人朋友们开始潜心学习，字节高中又恢复了往日正德厚学的氛围。</p>
+</div><div class="tags"><a href="/tags/https/"><i class="fa fa-tag"></i>https</a></div><div class="post-nav"><a class="pre" href="/2018/11/24/我的编程之路/">我的编程之路</a><a class="next" href="/2018/09/22/如何写一个微信小游戏的后台/">如何写一个微信小游戏的后台</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"><input type="hidden" name="sitesearch" value="http://streambuf.com"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/随笔/" style="font-size: 15px;">随笔</a> <a href="/tags/实习/" style="font-size: 15px;">实习</a> <a href="/tags/公众号/" style="font-size: 15px;">公众号</a> <a href="/tags/HBase/" style="font-size: 15px;">HBase</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/开发/" style="font-size: 15px;">开发</a> <a href="/tags/并发/" style="font-size: 15px;">并发</a> <a href="/tags/https/" style="font-size: 15px;">https</a> <a href="/tags/随感/" style="font-size: 15px;">随感</a> <a href="/tags/CSRF/" style="font-size: 15px;">CSRF</a> <a href="/tags/爬虫/" style="font-size: 15px;">爬虫</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/04/14/在爱奇艺实习八个月，我所学会的/">在爱奇艺实习八个月，我所学会的</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/30/我抓取了全校学生的毕设信息/">我抓取了全校学生的毕设信息</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/15/一名实习生的自我修养/">一名实习生的自我修养</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/08/云上秘史：Chapter1. HBase/">【鸽子】云上秘史：Chapter1. HBase</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/26/骗子或许比你更了解CSRF/">骗子或许比你更了解CSRF</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/24/我的编程之路/">我的编程之路</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/11/谈恋爱也要懂https/">谈恋爱也要懂https</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/22/如何写一个微信小游戏的后台/">如何写一个微信小游戏的后台</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/食堂中的生产者-消费者模型/">食堂中的生产者-消费者模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/16/这个时代，还需要写网志吗？/">这个时代，还需要写网志吗？</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2020 <a href="/." rel="nofollow">寒食帖.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js" successtext="复制成功!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
