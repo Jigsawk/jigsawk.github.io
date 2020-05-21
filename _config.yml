@@ -79,5 +79,5 @@ theme: maupassant
 ## Docs: https://hexo.io/docs/deployment.html
 deploy: 
   type: git
-  repo: git@github.com:CasualJi/CasualJi.github.io.git
+  repo: git@github.com:Jigsawk/Jigsawk.github.io.git
   branch: master

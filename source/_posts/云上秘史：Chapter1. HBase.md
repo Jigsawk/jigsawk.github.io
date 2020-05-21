@@ -1,5 +1,5 @@
 ---
-title: 【鸽子】云上秘史：Chapter1. HBase
+title: 云上秘史：Chapter1. HBase
 date: 2018-12-08 10:34:14
 tags:
 	- HBase
